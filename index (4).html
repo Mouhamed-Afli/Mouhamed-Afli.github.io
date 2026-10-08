@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mohamed Afli, Embedded Software Engineer: firmware for IoT, automotive and real-time systems.">
+<title>Mohamed Afli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: classic single-column portfolio. Sticky nav, hero with key figures, then Experience, Projects, Skills, Education, Contact. */
+:root{
+  --bg:#F7F8FA; --surface:#FFFFFF; --ink:#141B24; --muted:#56606D; --line:#E1E5EA;
+  --accent:#1D4E89; --accent-soft:#E8EFF8;
+  --display:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F141A; --surface:#161D25; --ink:#E6EAEE; --muted:#9AA5B1; --line:#27313C;
+  --accent:#7DB0EC; --accent-soft:#1A2A3D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F141A; --surface:#161D25; --ink:#E6EAEE; --muted:#9AA5B1; --line:#27313C;
+  --accent:#7DB0EC; --accent-soft:#1A2A3D; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+.container{max-width:1080px;margin:0 auto;padding-inline:20px}
+
+/* Nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.top .container{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+.brand{font:700 1rem var(--display);color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.mono-badge{width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--surface);display:grid;place-items:center;font:600 .75rem var(--display);letter-spacing:.02em}
+.links{display:flex;gap:22px;font-size:.95rem}
+.links a{color:var(--muted);text-decoration:none}
+.links a:hover{color:var(--ink)}
+@media (max-width:760px){.links{display:none}}
+
+/* Hero */
+.hero{padding-block:64px 56px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero>*{min-width:0}
+.eyebrow{font:500 .8rem var(--mono);color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.4rem,5.5vw,3.6rem);font-weight:700;letter-spacing:-.02em;margin-top:12px}
+.hero .title{font:500 1.25rem var(--display);color:var(--muted);margin-top:8px}
+.hero .intro{margin-top:20px;max-width:58ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;color:var(--muted);font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem var(--body);padding:11px 20px;border-radius:8px;text-decoration:none;border:1px solid var(--accent);background:var(--accent);color:var(--surface)}
+.btn:hover{filter:brightness(1.1)}
+.btn.secondary{background:transparent;color:var(--accent)}
+.btn.secondary:hover{background:var(--accent-soft);filter:none}
+.btn svg{width:16px;height:16px}
+
+.hero .intro + .intro{margin-top:12px}
+.side{display:flex;flex-direction:column;gap:16px;min-width:0}
+.portrait{display:block;width:100%;max-width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;object-position:center 30%;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+@media (max-width:860px){.side{max-width:420px}}
+.figures{background:var(--surface);border:1px solid var(--line);border-radius:12px;display:grid;grid-template-columns:1fr 1fr}
+.fig{padding:22px;display:flex;flex-direction:column;gap:4px;border-bottom:1px solid var(--line)}
+.fig:nth-child(odd){border-right:1px solid var(--line)}
+.fig:nth-last-child(-n+2){border-bottom:0}
+.fig b{font:600 1.75rem var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+.fig span{font-size:.88rem;color:var(--muted);line-height:1.4}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-block:40px}}
+
+/* Sections */
+section.block{padding-block:56px;border-top:1px solid var(--line)}
+.head{display:flex;flex-direction:column;gap:8px;margin-bottom:32px}
+.head h2{font-size:1.85rem;font-weight:700;letter-spacing:-.01em}
+.head p{color:var(--muted);max-width:62ch}
+
+/* Experience */
+.jobs{display:flex;flex-direction:column;gap:20px}
+.job{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px}
+.job .when{font:500 .85rem var(--mono);color:var(--muted)}
+.job .org{font-weight:600;margin-top:6px}
+.job .loc{color:var(--muted);font-size:.92rem}
+.job h3{font-size:1.25rem;font-weight:600}
+.job ul{margin:14px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.job li::marker{color:var(--accent)}
+.job .sub{font:600 .78rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-top:20px}
+.job .sub:first-of-type{margin-top:14px}
+@media (max-width:720px){.job{grid-template-columns:1fr;gap:12px;padding:22px}}
+
+/* Projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){.card:hover{transform:translateY(-2px)}}
+.card .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.domain{font:500 .75rem var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
+.year{font:400 .8rem var(--mono);color:var(--muted)}
+.card h3{font-size:1.15rem;font-weight:600}
+.card p{color:var(--muted);font-size:.97rem}
+.results{display:flex;flex-wrap:wrap;gap:8px}
+.result{font:600 .82rem var(--body);background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:999px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.chip{font:400 .76rem var(--mono);color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:6px}
+
+.more{margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.more h3{font-size:1rem;font-weight:600;padding:16px 24px;border-bottom:1px solid var(--line)}
+.more ul{list-style:none;margin:0;padding:0}
+.more li{display:grid;grid-template-columns:90px minmax(0,1fr);gap:16px;padding:14px 24px;border-bottom:1px solid var(--line)}
+.more li:last-child{border-bottom:0}
+.more .y{font:400 .85rem var(--mono);color:var(--muted)}
+.more b{font-weight:600}
+.more span.d{color:var(--muted)}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.sk h3{font-size:1rem;font-weight:600}
+.sk .chips{display:flex;flex-wrap:wrap;gap:8px}
+.sk .chip{font-size:.82rem;color:var(--ink);background:var(--bg)}
+
+/* Education */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.panel h3{font-size:1.1rem;font-weight:600}
+.item b{display:block;font-weight:600}
+.item span{color:var(--muted);font-size:.95rem}
+.lang{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.bar{flex:0 0 120px;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+.lang small{font:500 .8rem var(--mono);color:var(--muted);width:52px;text-align:right}
+.lang .nm{flex:1}
+
+/* Contact */
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.contact h2{font-size:1.85rem;font-weight:700}
+.contact p{color:var(--muted);margin-top:12px;max-width:46ch}
+.clist{display:flex;flex-direction:column;gap:12px}
+.cl{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg);flex-wrap:wrap}
+.cl .k{font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cl .v{font-weight:600;word-break:break-all}
+.cl button{font:500 .85rem var(--body);background:var(--surface);color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:6px 12px;cursor:pointer}
+.cl button:hover{border-color:var(--accent)}
+@media (max-width:760px){.contact{grid-template-columns:1fr;padding:24px;gap:24px}}
+
+footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Main">
+  <div class="container">
+    <a class="brand" href="#top"><span class="mono-badge" aria-hidden="true">MA</span>Mohamed Afli</a>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container" id="top">
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Embedded Software Engineer</div>
+    <h1>Mohamed Afli</h1>
+    <div class="title">Firmware for IoT, automotive and real-time systems</div>
+    <p class="intro">I build reliable firmware for connected devices, from the first board bring-up to fleets running in the field. Over 7 years I have shipped products on ESP32, STM32 and the Nordic nRF family (nRF52, nRF5340, nRF93M1, nRF7002), writing C and C++ on FreeRTOS and Zephyr.</p>
+    <p class="intro">My focus is devices that last on a battery, update safely over the air and stay connected over BLE, Wi-Fi, LoRa or cellular. I also bring training in AUTOSAR Classic and ISO&nbsp;26262 for automotive projects.</p>
+    <div class="meta"><span>Sousse, Tunisia</span><span>7+ years experience</span><span>Open to new roles</span></div>
+    <div class="actions">
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn secondary" href="Mohamed_Afli_CV.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download CV</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/afli-mohamed" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="side">
+    <img class="portrait" src="photo.jpg" alt="Portrait of Mohamed Afli" width="640" height="640">
+    <div class="figures" aria-label="Key results">
+      <div class="fig"><b>7+ yrs</b><span>production embedded firmware</span></div>
+      <div class="fig"><b>100+</b><span>devices updated over the air, none bricked</span></div>
+      <div class="fig"><b>±2%</b><span>battery state-of-charge accuracy</span></div>
+      <div class="fig"><b>6+ months</b><span>battery life on a BLE sensor node</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="block" id="experience" aria-labelledby="exp-h">
+  <div class="head"><h2 id="exp-h">Experience</h2></div>
+  <div class="jobs">
+    <article class="job">
+      <div><div class="when">Dec 2025 – Present</div><div class="org">InspireTech</div><div class="loc">Sousse, Tunisia</div></div>
+      <div>
+        <h3>Embedded Software Engineer</h3>
+        <ul>
+          <li>Architected a touchscreen HMI on ESP32-S3 with LVGL for real-time industrial data acquisition, cutting operator response time by 40%.</li>
+          <li>Built bidirectional MQTT/HTTP communication with 99.5% uptime and offline synchronisation covering outages of 24+ hours.</li>
+          <li>Developed a secure OTA update framework that removed on-site maintenance visits and reduced deployment costs by an estimated 60%.</li>
+          <li>Engineered nRF52832 sensor-node firmware with 6+ months of battery life and a custom BLE protocol for 50+ devices, delivered in an 8-week sprint.</li>
+          <li>Built multi-MCU motion control for an industrial garment steam finishing machine (ESP32 + ATmega32U4 over RS485) with stepper and BLDC drives, safety logic and a web control interface.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="job">
+      <div><div class="when">Jan 2019 – Dec 2025</div><div class="org">Tunisian Armed Forces</div><div class="loc">Tunis, Tunisia</div></div>
+      <div>
+        <h3>Embedded Software Engineer</h3>
+        <ul>
+          <li>Developed safety-critical medical sterilizer control on ESP32-S3 with an LVGL interface and Firebase/MQTT remote monitoring, improving maintenance response time by 50%.</li>
+          <li>Designed a dual-MCU solar irrigation valve (STM32F4 + ESP32-S3) reaching 95%+ MPPT efficiency and under 2&nbsp;mA standby current.</li>
+          <li>Built two production 4-cell Li-Ion BMS solutions with TI BQ25798/BQ40Z50 and wrote an SMBus driver achieving ±2% SoC accuracy over 500+ cycles.</li>
+          <li>Architected a secure OTA framework over GPRS for 100+ field devices with SSL/TLS, fault-tolerant partitioning and automatic rollback.</li>
+          <li>Created a reusable ESP-IDF/STM32 driver library and GSM, LoRa, MQTT and HTTP stacks used across 10+ projects, halving new-project development time.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block" id="projects" aria-labelledby="proj-h">
+  <div class="head"><h2 id="proj-h">Selected projects</h2><p>A selection of shipped and validated work across industrial, power and connected systems.</p></div>
+  <div class="grid">
+    <article class="card">
+      <div class="row"><span class="domain">Industrial IoT</span><span class="year">2025–26</span></div>
+      <h3>Cloud-connected industrial HMI</h3>
+      <p>Touchscreen operator interface with live data acquisition, cloud sync that survives long outages, and secure remote updates.</p>
+      <div class="results"><span class="result">−40% response time</span><span class="result">99.5% uptime</span></div>
+      <div class="stack"><span class="chip">ESP32-S3</span><span class="chip">LVGL</span><span class="chip">FreeRTOS</span><span class="chip">MQTT</span><span class="chip">OTA</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="domain">Low power</span><span class="year">2025–26</span></div>
+      <h3>Wireless BLE sensor node</h3>
+      <p>Battery-powered node with on-device filtering and a custom BLE protocol serving a network of 50+ devices.</p>
+      <div class="results"><span class="result">6+ months battery</span><span class="result">−35% payload</span></div>
+      <div class="stack"><span class="chip">nRF52832</span><span class="chip">Zephyr</span><span class="chip">BLE</span><span class="chip">SPI/I2C</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="domain">Motion control</span><span class="year">2025–26</span></div>
+      <h3>Garment steam finishing machine</h3>
+      <p>Three-MCU control system driving steppers and a BLDC motor, with homing, safety interlocks and a browser-based operator panel.</p>
+      <div class="results"><span class="result">Multi-MCU over RS485</span></div>
+      <div class="stack"><span class="chip">ESP32-S3</span><span class="chip">ATmega32U4</span><span class="chip">TMC2209</span><span class="chip">L6234</span><span class="chip">WebSocket</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="domain">Battery management</span><span class="year">2024–25</span></div>
+      <h3>4-cell Li-Ion BMS</h3>
+      <p>Two production-ready designs on ESP32 and STM32 with a custom SMBus driver for TI fuel gauge and charger ICs.</p>
+      <div class="results"><span class="result">±2% SoC</span><span class="result">500+ cycles</span></div>
+      <div class="stack"><span class="chip">BQ40Z50</span><span class="chip">BQ25798</span><span class="chip">SMBus</span><span class="chip">STM32</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="domain">Solar &amp; power</span><span class="year">2024–25</span></div>
+      <h3>Smart solar irrigation valve</h3>
+      <p>Dual-MCU design separating motor control from connectivity, with MPPT solar charging and aggressive standby power management.</p>
+      <div class="results"><span class="result">95%+ MPPT</span><span class="result">&lt;2 mA standby</span></div>
+      <div class="stack"><span class="chip">STM32F4</span><span class="chip">ESP32-S3</span><span class="chip">MPPT</span></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="domain">Firmware updates</span><span class="year">2024</span></div>
+      <h3>Secure OTA over GPRS</h3>
+      <p>Modular update framework for a cellular fleet, with TLS, release management through GitHub and automatic rollback on failure.</p>
+      <div class="results"><span class="result">100+ devices</span><span class="result">0 bricked</span></div>
+      <div class="stack"><span class="chip">ESP32</span><span class="chip">Quectel MC60</span><span class="chip">SSL/TLS</span><span class="chip">GPRS</span></div>
+    </article>
+  </div>
+
+  <div class="more">
+    <h3>Earlier work</h3>
+    <ul>
+      <li><span class="y">2024–25</span><div><b>Medical sterilizer control.</b> <span class="d">Safety-critical ESP32-S3 controller with LVGL HMI and remote monitoring.</span></div></li>
+      <li><span class="y">2023</span><div><b>IoT BMS prototype.</b> <span class="d">ESP32-C3 with AG105 charger, INA sensors and MQTT telemetry; 200+ hours of testing.</span></div></li>
+      <li><span class="y">2022</span><div><b>Athlete health monitor.</b> <span class="d">Wearable with GPS, heart rate and IMU fusion under 100 ms, GSM to Firebase, 12+ hours battery.</span></div></li>
+      <li><span class="y">2020–21</span><div><b>Driver library &amp; communication stack.</b> <span class="d">Reusable ESP-IDF/STM32 drivers with GSM, LoRa, MQTT and HTTP, used in 10+ projects.</span></div></li>
+      <li><span class="y">2019</span><div><b>Remote door control.</b> <span class="d">GSM and LoRa access control on ATmega328 with motor drive and safety interlocks.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="skills" aria-labelledby="sk-h">
+  <div class="head"><h2 id="sk-h">Technical skills</h2></div>
+  <div class="skills">
+    <div class="sk"><h3>Languages &amp; RTOS</h3><div class="chips"><span class="chip">C</span><span class="chip">C++</span><span class="chip">Embedded C</span><span class="chip">Python</span><span class="chip">FreeRTOS</span><span class="chip">Zephyr RTOS</span><span class="chip">Bare-metal</span></div></div>
+    <div class="sk"><h3>Frameworks &amp; SDKs</h3><div class="chips"><span class="chip">ESP-IDF</span><span class="chip">nRF Connect SDK</span><span class="chip">Nordic nRF5 SDK</span><span class="chip">STM32 HAL/LL</span><span class="chip">STM32CubeMX</span><span class="chip">LVGL</span></div></div>
+    <div class="sk"><h3>Microcontrollers</h3><div class="chips"><span class="chip">ESP32 / S3 / C3</span><span class="chip">STM32 F4 / F7 / WL</span><span class="chip">Nordic nRF52</span><span class="chip">nRF5340</span><span class="chip">nRF93M1</span><span class="chip">nRF7002</span><span class="chip">ATmega328</span></div></div>
+    <div class="sk"><h3>Wired protocols</h3><div class="chips"><span class="chip">UART</span><span class="chip">SPI</span><span class="chip">I2C</span><span class="chip">CAN</span><span class="chip">LIN</span><span class="chip">SMBus</span><span class="chip">Modbus</span><span class="chip">RS485</span></div></div>
+    <div class="sk"><h3>Connectivity</h3><div class="chips"><span class="chip">BLE</span><span class="chip">LoRa</span><span class="chip">Wi-Fi</span><span class="chip">GSM/GPRS</span><span class="chip">TCP/IP</span><span class="chip">MQTT</span><span class="chip">HTTP</span><span class="chip">SSL/TLS</span></div></div>
+    <div class="sk"><h3>Automotive</h3><div class="chips"><span class="chip">AUTOSAR Classic</span><span class="chip">Vector DaVinci Configurator</span><span class="chip">EB tresos</span><span class="chip">ISO 26262</span></div></div>
+    <div class="sk"><h3>Power &amp; BMS</h3><div class="chips"><span class="chip">TI BQ25798</span><span class="chip">BQ40Z50</span><span class="chip">bq27z758</span><span class="chip">MPPT charging</span><span class="chip">SoC / SoH estimation</span></div></div>
+    <div class="sk"><h3>Tools</h3><div class="chips"><span class="chip">Git</span><span class="chip">GDB</span><span class="chip">JTAG</span><span class="chip">Keil uVision</span><span class="chip">VS Code</span><span class="chip">MATLAB/Simulink</span><span class="chip">Yocto</span></div></div>
+  </div>
+</section>
+
+<section class="block" id="education" aria-labelledby="ed-h">
+  <div class="head"><h2 id="ed-h">Education &amp; training</h2></div>
+  <div class="two">
+    <div class="panel">
+      <h3>Education</h3>
+      <div class="item"><b>Engineering Degree in Electromechanics</b><span>Military Academy of Fondouk Jdid, Nabeul · 2015 – 2018</span></div>
+      <div class="item"><b>Preparatory Classes in Physics &amp; Technology</b><span>IPEIN, Nabeul · 2013 – 2015</span></div>
+    </div>
+    <div class="panel">
+      <h3>Certifications</h3>
+      <div class="item"><b>AUTOSAR Classic Platform</b><span>BSW configuration, DaVinci Configurator, EB tresos</span></div>
+      <div class="item"><b>Embedded Linux &amp; Yocto Project</b><span>System customisation, BSP development</span></div>
+      <div class="item"><b>MATLAB &amp; Simulink</b><span>Model-based design, control-system simulation</span></div>
+    </div>
+    <div class="panel">
+      <h3>Languages</h3>
+      <div class="lang"><span class="nm">Arabic</span><span class="bar"><i style="width:100%"></i></span><small>Native</small></div>
+      <div class="lang"><span class="nm">English</span><span class="bar"><i style="width:70%"></i></span><small>B2</small></div>
+      <div class="lang"><span class="nm">French</span><span class="bar"><i style="width:70%"></i></span><small>B2</small></div>
+      <div class="lang"><span class="nm">German</span><span class="bar"><i style="width:50%"></i></span><small>B1</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact" aria-labelledby="ct-h">
+  <div class="contact">
+    <div>
+      <h2 id="ct-h">Let's work together</h2>
+      <p>I'm open to embedded firmware roles in IoT, automotive and industrial systems, on-site or remote. Email is the best way to reach me.</p>
+    </div>
+    <div class="clist">
+      <div class="cl"><div><div class="k">Email</div><div class="v">aflimohamed155@gmail.com</div></div><button type="button" data-copy="aflimohamed155@gmail.com">Copy</button></div>
+      <div class="cl"><div><div class="k">Phone</div><div class="v">+216 22 503 637</div></div><button type="button" data-copy="+216 22 503 637">Copy</button></div>
+      <div class="cl"><div><div class="k">LinkedIn</div><a class="v" href="https://www.linkedin.com/in/afli-mohamed" target="_blank" rel="noopener">linkedin.com/in/afli-mohamed</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><span>© 2026 Mohamed Afli</span><span>Embedded Software Engineer · Tunisia</span></footer>
+</main>
+
+<script>
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+  const reset=()=>setTimeout(()=>b.textContent="Copy",1500);
+  const sel=()=>{const v=b.parentElement.querySelector(".v");const r=document.createRange();r.selectNodeContents(v);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected";reset();};
+  try{navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent="Copied";reset();},sel)}catch(e){sel()}
+}));
+</script>
+</body>
+</html>
