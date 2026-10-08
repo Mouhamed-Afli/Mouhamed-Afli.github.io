@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Mohamed Afli, Embedded Software Engineer: firmware for IoT, automotive and real-time systems.">
+<meta name="description" content="Mohamed Afli, Embedded Software Engineer: firmware for IoT, BMS, automotive and real-time systems.">
 <title>Mohamed Afli</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -149,6 +149,7 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
 </head>
 <body>
 
+
 <nav class="top" aria-label="Main">
   <div class="container">
     <a class="brand" href="#top"><span class="mono-badge" aria-hidden="true">MA</span>Mohamed Afli</a>
@@ -168,9 +169,9 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
   <div>
     <div class="eyebrow">Embedded Software Engineer</div>
     <h1>Mohamed Afli</h1>
-    <div class="title">Firmware for IoT, automotive and real-time systems</div>
+    <div class="title">Firmware for IoT, BMS, automotive and real-time systems</div>
     <p class="intro">I build reliable firmware for connected devices, from the first board bring-up to fleets running in the field. Over 7 years I have shipped products on ESP32, STM32 and the Nordic nRF family (nRF52, nRF5340, nRF93M1, nRF7002), writing C and C++ on FreeRTOS and Zephyr.</p>
-    <p class="intro">My focus is devices that last on a battery, update safely over the air and stay connected over BLE, Wi-Fi, LoRa or cellular. I also bring training in AUTOSAR Classic and ISO&nbsp;26262 for automotive projects.</p>
+    <p class="intro">I specialise in battery management systems (BMS): multi-cell Li-Ion monitoring, charging control and accurate state-of-charge and state-of-health estimation on TI fuel gauges and chargers. Around that, I build devices that last on a battery, update safely over the air and stay connected over BLE, Wi-Fi, LoRa or cellular. I also bring training in AUTOSAR Classic and ISO&nbsp;26262 for automotive projects.</p>
     <div class="meta"><span>Sousse, Tunisia</span><span>7+ years experience</span><span>Open to new roles</span></div>
     <div class="actions">
       <a class="btn" href="#contact">Get in touch</a>
@@ -184,7 +185,7 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
     <div class="figures" aria-label="Key results">
       <div class="fig"><b>7+ yrs</b><span>production embedded firmware</span></div>
       <div class="fig"><b>100+</b><span>devices updated over the air, none bricked</span></div>
-      <div class="fig"><b>±2%</b><span>battery state-of-charge accuracy</span></div>
+      <div class="fig"><b>±2%</b><span>BMS state-of-charge accuracy over 500+ cycles</span></div>
       <div class="fig"><b>6+ months</b><span>battery life on a BLE sensor node</span></div>
     </div>
   </div>
@@ -290,7 +291,7 @@ footer{padding-block:32px;color:var(--muted);font-size:.9rem;display:flex;justif
     <div class="sk"><h3>Wired protocols</h3><div class="chips"><span class="chip">UART</span><span class="chip">SPI</span><span class="chip">I2C</span><span class="chip">CAN</span><span class="chip">LIN</span><span class="chip">SMBus</span><span class="chip">Modbus</span><span class="chip">RS485</span></div></div>
     <div class="sk"><h3>Connectivity</h3><div class="chips"><span class="chip">BLE</span><span class="chip">LoRa</span><span class="chip">Wi-Fi</span><span class="chip">GSM/GPRS</span><span class="chip">TCP/IP</span><span class="chip">MQTT</span><span class="chip">HTTP</span><span class="chip">SSL/TLS</span></div></div>
     <div class="sk"><h3>Automotive</h3><div class="chips"><span class="chip">AUTOSAR Classic</span><span class="chip">Vector DaVinci Configurator</span><span class="chip">EB tresos</span><span class="chip">ISO 26262</span></div></div>
-    <div class="sk"><h3>Power &amp; BMS</h3><div class="chips"><span class="chip">TI BQ25798</span><span class="chip">BQ40Z50</span><span class="chip">bq27z758</span><span class="chip">MPPT charging</span><span class="chip">SoC / SoH estimation</span></div></div>
+    <div class="sk"><h3>Battery management (BMS)</h3><div class="chips"><span class="chip">Multi-cell Li-Ion</span><span class="chip">SoC / SoH estimation</span><span class="chip">Cell balancing &amp; protection</span><span class="chip">TI BQ40Z50</span><span class="chip">TI BQ25798</span><span class="chip">bq27z758</span><span class="chip">SMBus drivers</span><span class="chip">MPPT solar charging</span></div></div>
     <div class="sk"><h3>Tools</h3><div class="chips"><span class="chip">Git</span><span class="chip">GDB</span><span class="chip">JTAG</span><span class="chip">Keil uVision</span><span class="chip">VS Code</span><span class="chip">MATLAB/Simulink</span><span class="chip">Yocto</span></div></div>
   </div>
 </section>
@@ -343,5 +344,7 @@ document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",(
   try{navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent="Copied";reset();},sel)}catch(e){sel()}
 }));
 </script>
+
 </body>
 </html>
+
